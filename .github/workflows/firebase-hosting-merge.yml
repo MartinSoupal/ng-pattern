@@ -10,9 +10,6 @@ jobs:
   build_and_deploy:
     permissions: write-all
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./fe
     steps:
       - uses: actions/checkout@v3
       - name: Setup Node.js
@@ -38,8 +35,7 @@ jobs:
         run: npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          entryPoint: ./fe
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_TODO_WEBPAGE }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_NG_PATTERN }}'
           channelId: live
-          projectId: todo-webpage
+          projectId: ng-pattern

@@ -40,7 +40,7 @@ Thumbs.db
 /.vscode
 
 # Firebase
-firebase.json
+.firebase/
 
 # Angular
 .angular/
