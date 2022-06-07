@@ -1,0 +1,31 @@
+{
+  "name": "ng-pattern",
+  "version": "0.0.1",
+  "description": "",
+  "author": "Martin Šoupal",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MartinSoupal/ng-pattern.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MartinSoupal/ng-pattern/issues"
+  },
+  "homepage": "https://github.com/MartinSoupal/ng-pattern#readme",
+  "keywords": [
+    "angular",
+    "directive",
+    "regexp",
+    "typescript",
+    "input",
+    "formcontrol"
+  ],
+
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/common": "^13.3.0",
+    "@angular/core": "^13.3.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

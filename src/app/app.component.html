@@ -10,8 +10,8 @@
             <input
               class="form-control"
               type="text"
-              [ngPattern]="pattern.value"
-              [ngPatternStrict]="strict.checked"
+              [ngPattern]="patternControl.value"
+              [ngPatternStrict]="strictControl.value"
               (ngPatternInvalid)="invalid($event)"
               [formControl]="control"
             />
@@ -41,7 +41,7 @@
                 >RegExp&nbsp;<em>(string)</em></span
               >
               <input
-                #pattern
+                [formControl]="patternControl"
                 type="text"
                 class="form-control"
                 placeholder="RegExp string"
@@ -61,7 +61,7 @@
               <button
                 type="button"
                 class="btn btn-outline-secondary"
-                (click)="pattern.value = '^\\d+$'"
+                (click)="usePattern('^\\d+$')"
               >
                 Try
               </button>
@@ -78,7 +78,7 @@
               <button
                 type="button"
                 class="btn btn-outline-secondary"
-                (click)="pattern.value = '^[a-zA-Z]+$'"
+                (click)="usePattern('^[a-zA-Z]+$')"
               >
                 Try
               </button>
@@ -97,7 +97,7 @@
               <button
                 type="button"
                 class="btn btn-outline-secondary"
-                (click)="pattern.value = '^\\d{0,4}$'"
+                (click)="usePattern('^\\d{0,4}$')"
               >
                 Try
               </button>
@@ -110,13 +110,13 @@
           </div>
           <div class="col-4 d-grid">
             <div class="btn-group" role="group">
-              <button type="button" class="btn btn-outline-secondary" (click)="copy('^(\\d{2}\.\\d{2}\.\\d{4})$')">
+              <button type="button" class="btn btn-outline-secondary" (click)="copy('^(\\d{1,2}\.\\d{1,2}\.\\d{4})$')">
                 <i class="bi bi-clipboard"></i>
               </button>
               <button
                 type="button"
                 class="btn btn-outline-secondary"
-                (click)="pattern.value = '^(\\d{2}\.\\d{2}\.\\d{4})$'"
+                (click)="usePattern('^(\\d{1,2}\.\\d{1,2}\.\\d{4})$')"
               >
                 Try
               </button>
@@ -137,7 +137,7 @@
                     class="form-check-input"
                     type="checkbox"
                     id="flexSwitchCheckReverse"
-                    #strict
+                    [formControl]="strictControl"
                   />
                 </div>
               </div>
