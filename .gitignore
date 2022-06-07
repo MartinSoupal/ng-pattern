@@ -41,6 +41,8 @@ Thumbs.db
 
 # Firebase
 firebase.json
+.firebaserc
+.firebase/
 
 # Angular
 .angular/
